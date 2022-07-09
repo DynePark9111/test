@@ -1,0 +1,89 @@
+@use "./global" as *;
+
+$br: 0.5rem;
+
+.Map {
+  @include wrap;
+  display: flex;
+  flex-direction: column;
+  section {
+    width: 100%;
+    flex: 1;
+    position: relative;
+    display: flex;
+    margin: auto;
+    iframe {
+      width: 100%;
+      border: none;
+    }
+    .topLeft {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      padding: 0.55rem 1rem;
+      background-color: $bg_btn;
+      border-radius: $br;
+      color: $tx_btn;
+    }
+    .topRight {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      button {
+        padding: 0.5rem;
+        width: 7rem;
+        background-color: $bg_btn;
+        border-radius: $br;
+        color: $tx_btn;
+        text-align: center;
+        border: none;
+        &:hover {
+          color: #eee;
+        }
+      }
+      #selected {
+        color: #eee;
+      }
+    }
+    .bottomLeft {
+      position: absolute;
+      bottom: 1rem;
+      left: 8rem;
+      width: 6rem;
+      padding: 0.55rem 1rem;
+      background-color: $bg_btn;
+      border-radius: $br;
+      color: $tx_btn;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .circle {
+        color: #3aff3a;
+      }
+    }
+    .bottomRight {
+      position: absolute;
+      bottom: 1rem;
+      right: 1rem;
+      display: flex;
+      gap: 0.25rem;
+      button {
+        padding: 0.75rem;
+        background-color: $bg_btn;
+        border-radius: $br;
+        color: $tx_btn;
+        text-align: center;
+        border: none;
+        &:hover {
+          color: #eee;
+        }
+      }
+    }
+  }
+  button {
+    cursor: pointer;
+  }
+}

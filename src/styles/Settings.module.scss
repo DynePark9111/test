@@ -1,0 +1,34 @@
+@use "./global" as *;
+
+.Settings {
+  @include wrap;
+  .wrapper {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    max-width: $max_width;
+    margin: auto;
+    color: var(--tx);
+    h2 {
+      margin: 3rem 0 1rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid $tx_btn;
+    }
+    section {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      button {
+        width: 120px;
+        padding: 0.75rem 1rem;
+        margin: 1rem 1rem 1rem 0;
+        background: none;
+        border: 1px solid $lightblue;
+        border-radius: 4px;
+        color: $lightblue;
+        font-weight: bold;
+        cursor: pointer;
+      }
+    }
+  }
+}

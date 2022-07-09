@@ -1,0 +1,33 @@
+@use "./global" as *;
+
+.LocalNavbar {
+  font-size: 1.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  height: 3rem;
+  background-color: var(--bg);
+  .wrapper {
+    margin: auto;
+    max-width: $max_width;
+    height: 100%;
+    color: var(--tx);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      font-size: 1.5rem;
+      padding: 0.5rem;
+      cursor: pointer;
+    }
+    .current {
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      font-weight: bold;
+    }
+  }
+}
