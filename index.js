@@ -1,8 +1,8 @@
-import express from "express";
+const express = require("express");
 const app = express();
 const cors = require("cors");
-const miseRoutes = require("./routes/mise.routes");
-const cache = require("./middlewares/routeCache");
+const miseRoutes = require("./src/routes/mise.routes");
+const cache = require("./src/middlewares/routeCache");
 
 require("dotenv").config();
 const PORT = process.env.PORT || 3001;

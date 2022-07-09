@@ -1,11 +1,9 @@
-import { Request, Response } from "express";
-
 require("dotenv").config();
 const API_KEY = process.env.API_KEY;
 const axios = require("axios");
 const { convertData } = require("../functions/convert");
 
-const getTest = async (req: Request, res: Response) => {
+const getTest = async (req, res) => {
   try {
     res.status(200).json({ message: "mise test" });
   } catch (error) {
@@ -13,7 +11,7 @@ const getTest = async (req: Request, res: Response) => {
   }
 };
 
-const getMise = async (req: Request, res: Response) => {
+const getMise = async (req, res) => {
   const station = req.params.stationName.split(" ")[1];
   const query = `serviceKey=${API_KEY}&stationName=${encodeURI(
     station

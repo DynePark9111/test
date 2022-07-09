@@ -1,9 +1,0 @@
-@baseUrl = http://localhost:3001
-
-GET {{baseUrl}}
-###
-GET {{baseUrl}}/mise/
-###
-GET {{baseUrl}}/mise/서울 종로구
-###
-GET {{baseUrl}}/mise/서울 강남구

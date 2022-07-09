@@ -1,4 +1,4 @@
-function pm10Lv4Convert(value: number) {
+function pm10Lv4Convert(value) {
   switch (true) {
     case value === null:
       return 0;
@@ -14,7 +14,7 @@ function pm10Lv4Convert(value: number) {
       return 0;
   }
 }
-function pm25Lv4Convert(value: number) {
+function pm25Lv4Convert(value) {
   switch (true) {
     case value === null:
       return 0;
@@ -30,7 +30,7 @@ function pm25Lv4Convert(value: number) {
       return 0;
   }
 }
-function o3Lv4Convert(value: number) {
+function o3Lv4Convert(value) {
   switch (true) {
     case value === null:
       return 0;
@@ -46,7 +46,7 @@ function o3Lv4Convert(value: number) {
       return 0;
   }
 }
-function no2Lv4Convert(value: number) {
+function no2Lv4Convert(value) {
   switch (true) {
     case value === null:
       return 0;
@@ -62,7 +62,7 @@ function no2Lv4Convert(value: number) {
       return 0;
   }
 }
-function coLv4Convert(value: number) {
+function coLv4Convert(value) {
   switch (true) {
     case value === null:
       return 0;
@@ -78,7 +78,7 @@ function coLv4Convert(value: number) {
       return 0;
   }
 }
-function so2Lv4Convert(value: number) {
+function so2Lv4Convert(value) {
   switch (true) {
     case value === null:
       return 0;
@@ -95,7 +95,7 @@ function so2Lv4Convert(value: number) {
   }
 }
 
-function pm10Lv8Convert(value: number) {
+function pm10Lv8Convert(value) {
   switch (true) {
     case value === null:
       return 0;
@@ -119,7 +119,7 @@ function pm10Lv8Convert(value: number) {
       return 0;
   }
 }
-function pm25Lv8Convert(value: number) {
+function pm25Lv8Convert(value) {
   switch (true) {
     case value === null:
       return 0;
@@ -143,7 +143,7 @@ function pm25Lv8Convert(value: number) {
       return 0;
   }
 }
-function o3Lv8Convert(value: number) {
+function o3Lv8Convert(value) {
   switch (true) {
     case value === null:
       return 0;
@@ -167,7 +167,7 @@ function o3Lv8Convert(value: number) {
       return 0;
   }
 }
-function no2Lv8Convert(value: number) {
+function no2Lv8Convert(value) {
   switch (true) {
     case value === null:
       return 0;
@@ -191,7 +191,7 @@ function no2Lv8Convert(value: number) {
       return 0;
   }
 }
-function coLv8Convert(value: number) {
+function coLv8Convert(value) {
   switch (true) {
     case value === null:
       return 0;
@@ -215,7 +215,7 @@ function coLv8Convert(value: number) {
       return 0;
   }
 }
-function so2Lv8Convert(value: number) {
+function so2Lv8Convert(value) {
   switch (true) {
     case value === null:
       return 0;
@@ -240,14 +240,7 @@ function so2Lv8Convert(value: number) {
   }
 }
 
-function getLv4(
-  pm10: number,
-  pm25: number,
-  o3: number,
-  no2: number,
-  co: number,
-  so2: number
-) {
+function getLv4(pm10, pm25, o3, no2, co, so2) {
   const pm10Lv4 = pm10Lv4Convert(pm10);
   const pm25Lv4 = pm25Lv4Convert(pm25);
   const o3Lv4 = o3Lv4Convert(o3);
@@ -258,14 +251,7 @@ function getLv4(
   return { pm10Lv4, pm25Lv4, o3Lv4, no2Lv4, coLv4, so2Lv4, maxLv4 };
 }
 
-function getLv8(
-  pm10: number,
-  pm25: number,
-  o3: number,
-  no2: number,
-  co: number,
-  so2: number
-) {
+function getLv8(pm10, pm25, o3, no2, co, so2) {
   const pm10Lv8 = pm10Lv8Convert(pm10);
   const pm25Lv8 = pm25Lv8Convert(pm25);
   const o3Lv8 = o3Lv8Convert(o3);
@@ -276,15 +262,7 @@ function getLv8(
   return { pm10Lv8, pm25Lv8, o3Lv8, no2Lv8, coLv8, so2Lv8, maxLv8 };
 }
 
-function convertData(
-  pm10: number,
-  pm25: number,
-  o3: number,
-  no2: number,
-  co: number,
-  so2: number,
-  dataTime: Date
-) {
+function convertData(pm10, pm25, o3, no2, co, so2, dataTime) {
   const lv4 = getLv4(pm10, pm25, o3, no2, co, so2);
   const lv8 = getLv8(pm10, pm25, o3, no2, co, so2);
   return { dataTime, pm10, pm25, o3, no2, co, so2, ...lv4, ...lv8 };
